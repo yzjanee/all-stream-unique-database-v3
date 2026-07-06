@@ -122,10 +122,79 @@ Kopo23, Li__21, Ship19, Ship20, Vasi21, Yang22, Yang23
 
 ---
 
-## Next steps (pending)
+## Step 7: `astrodb-ingest-sources` — Ingest 80,135 sources
 
-- Step 7: `astrodb-ingest-sources` — ingest 80,135 Gaia DR3 sources (SESAME/SIMBAD check)
-- Step 8: Ingest measurements (Parallaxes, ProperMotions, RadialVelocities, Photometry,
-  Associations, ModeledParameters)
-- Open issue: proper motion accuracy and PR for pmra_pmdec_corr field
-- Future: write `astrodb-update-gaia` skill for Gaia data refresh workflow
+**Script:** `astrodb-ingest-artifacts/ingest_all_streams_unique_sources.py`
+
+**What happened:**
+- SESAME/SIMBAD name check (skill Step 1.5): skipped — source names are systematic
+  Gaia DR3 IDs; 80k queries would take hours and most stream candidates are not in SIMBAD
+- Source name format: `"Gaia DR3 {source_id}"` (PK); raw integer source_id added to Names
+- `epoch_year = 2016.0` for all sources (Gaia DR3 reference epoch J2016.0)
+- FITS full reference names (e.g. `Bonaca2020`) mapped to v3 shortnames (e.g. `Bona20`)
+  via `REFERENCE_MAP` dict; `search_db=False` to skip astrodbkit query_region overhead
+- 27 duplicate source_ids (stars in two streams) deduplicated via `seen_source_ids` set
+- Dry run: 80,135 sources ingested, 80,135 alternate names added, 0 skipped ✓
+- Live run: saved to `data/source/` (80,135 JSON files) ✓
+- Updated `tests/test_contents_sources.py`: expects 80,135 sources, 160,270 names
+- All 14 tests pass ✓
+
+---
+
+## Step 8: Measurements ingestion — 6 data tables
+
+**Script:** `astrodb-ingest-artifacts/ingest_all_streams_unique_measurements.py`
+
+**What happened:**
+
+Lookup tables populated first (required before FK constraints can be satisfied):
+- Telescopes: `Gaia` (reference `Ibat24`)
+- Instruments: `Gaia AF` (imaging), `Gaia RVS` (spectroscopy)
+- PhotometryFilters: `Gaia/Gaia3.G` (λ_eff = 6231 Å)
+- RegimeList: `optical`
+- AssociationList: 92 streams (references mapped to v3 shortnames per stream discoverer)
+- ParameterList: 8 parameters (`bp_rp`, `d_orb_kpc`, `X_kpc`, `Y_kpc`, `Z_kpc`,
+  `dist_kpc`, `FeH`, `aFe`)
+
+Data tables (one pass over FITS, bulk-inserted via SQLAlchemy):
+
+| Table | Rows | Notes |
+|-------|------|-------|
+| Parallaxes | 80,130 | 5 NaN-parallax sources excluded |
+| ProperMotions | 80,130 | `pm_ra`/`pm_dec`/`pmra_pmdec_corr` only (v3 schema simplified) |
+| RadialVelocities | 6,942 | 73,193 NaN-Vr sources excluded; `Vr_err==0` stored as NULL |
+| Photometry | 80,135 | G-band only (`phot_g_mean_mag`); deduped by source_id |
+| Associations | 80,162 | All source×stream pairs; 27 duplicate stars appear twice |
+| ModeledParameters | 458,088 | 8 params; `dist_kpc`/`FeH`/`aFe` sparse (not all papers provide) |
+
+All rows: `adopted = True`. 484 multi-ref rows store second reference as `"ref2: <shortname>"`
+in the `comments` field.
+
+- Dry run: all 6 tables inserted cleanly, 0 errors ✓
+- Live run: saved to `data/source/` + `data/reference/` ✓
+- Updated `tests/test_contents_kinematics.py` and `tests/test_contents_parameters.py`
+  with exact row counts
+- All 14 tests pass ✓
+
+**Gotcha:** `all_streams_unique_v3.sqlite` grew to ~179 MB with full data — exceeds GitHub's
+100 MB file size limit. Added `*.sqlite` to `.gitignore`; sqlite is now a local-only generated
+artifact rebuilt by `build_db_from_json` from the JSON data files.
+
+---
+
+## Step 9: Documentation
+
+**What happened:**
+- Regenerated `docs/schema/*.md` (15 files) from `schema.yaml` via `scripts/build_schema_docs.py`
+- `docs/README.md` updated: lists only v3's 15 tables, no ERD reference
+- Created `docs/data_description.md`: record counts, source naming, ingestion decisions,
+  publications table
+- Updated top-level `README.md`: removed broken ERD image link, added link to
+  `docs/data_description.md`
+
+---
+
+## Remaining / future work
+
+- Open GitHub issue: proper motion accuracy discussion + `pmra_pmdec_corr` field rationale
+- Write `astrodb-update-gaia` skill for future Gaia data refresh workflow
