@@ -33,7 +33,7 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 logging.basicConfig(format="%(levelname)s - %(message)s")
 
-SAVE_DB = False  # Set to True after successful dry run to persist changes
+SAVE_DB = True  # Set to True after successful dry run to persist changes
 
 SETTINGS_FILE = "database.toml"
 TABLE_PATH = "../all-stream-unique-database-v2/all_streams_unique.fits"

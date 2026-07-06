@@ -8,14 +8,14 @@ from sqlalchemy import or_
 
 def test_sources(db):
     n_sources = db.query(db.Sources).count()
-    # Expected: 80,135 unique Gaia DR3 sources (update after ingestion)
-    assert n_sources == 0, f"found {n_sources} sources (expected 0 before ingestion)"
+    # 80,135 unique Gaia DR3 sources (80,162 rows minus 27 duplicate source_ids)
+    assert n_sources == 80135, f"found {n_sources} sources (expected 80135)"
 
 
 def test_names(db):
     n_names = db.query(db.Names).count()
-    # Expected: 160,270 names (2 per source: "Gaia DR3 <id>" + raw int)
-    assert n_names == 0, f"found {n_names} names (expected 0 before ingestion)"
+    # 160,270 names: 2 per source ("Gaia DR3 <id>" primary + raw integer alternate)
+    assert n_names == 160270, f"found {n_names} names (expected 160270)"
 
 
 def test_coordinates(db):
