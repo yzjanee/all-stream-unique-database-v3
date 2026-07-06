@@ -11,12 +11,96 @@
             "comments": null
         }
     ],
+    "Associations": [
+        {
+            "association": "NGC 3201",
+            "membership_probability": null,
+            "adopted": true,
+            "comments": null,
+            "reference": "Ibat24"
+        }
+    ],
+    "ModeledParameters": [
+        {
+            "parameter": "X_kpc",
+            "value": -9.767803882775134,
+            "error": null,
+            "unit": "kpc",
+            "comments": null,
+            "reference": "Ibat24"
+        },
+        {
+            "parameter": "Y_kpc",
+            "value": -2.9150650598146886,
+            "error": null,
+            "unit": "kpc",
+            "comments": null,
+            "reference": "Ibat24"
+        },
+        {
+            "parameter": "Z_kpc",
+            "value": -0.5882484862088624,
+            "error": null,
+            "unit": "kpc",
+            "comments": null,
+            "reference": "Ibat24"
+        },
+        {
+            "parameter": "bp_rp",
+            "value": 0.9744873046875,
+            "error": null,
+            "unit": "mag",
+            "comments": null,
+            "reference": "Ibat24"
+        },
+        {
+            "parameter": "d_orb_kpc",
+            "value": 3.331228878758868,
+            "error": null,
+            "unit": "kpc",
+            "comments": null,
+            "reference": "Ibat24"
+        }
+    ],
     "Names": [
         {
             "other_name": "5604401257167040896"
         },
         {
             "other_name": "Gaia DR3 5604401257167040896"
+        }
+    ],
+    "Parallaxes": [
+        {
+            "parallax_mas": 0.2545770192543457,
+            "parallax_error": 0.10896188020706177,
+            "adopted": true,
+            "comments": null,
+            "reference": "Ibat24"
+        }
+    ],
+    "Photometry": [
+        {
+            "band": "Gaia/Gaia3.G",
+            "magnitude": 18.244009017944336,
+            "magnitude_error": null,
+            "telescope": "Gaia",
+            "adopted": true,
+            "comments": null,
+            "reference": "Ibat24",
+            "regime": "optical"
+        }
+    ],
+    "ProperMotions": [
+        {
+            "pm_ra": 21.853460889896382,
+            "pm_ra_error": 0.10271347314119339,
+            "pm_dec": -16.57583198927436,
+            "pm_dec_error": 0.11751410365104675,
+            "pmra_pmdec_corr": 0.1705959141254425,
+            "adopted": true,
+            "comments": null,
+            "reference": "Ibat24"
         }
     ]
 }

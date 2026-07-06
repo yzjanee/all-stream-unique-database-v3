@@ -11,12 +11,96 @@
             "comments": null
         }
     ],
+    "Associations": [
+        {
+            "association": "M5",
+            "membership_probability": 0.241,
+            "adopted": true,
+            "comments": null,
+            "reference": "Gril19"
+        }
+    ],
+    "ModeledParameters": [
+        {
+            "parameter": "X_kpc",
+            "value": -7.225027092773045,
+            "error": null,
+            "unit": "kpc",
+            "comments": null,
+            "reference": "Gril19"
+        },
+        {
+            "parameter": "Y_kpc",
+            "value": -0.7694646220539749,
+            "error": null,
+            "unit": "kpc",
+            "comments": null,
+            "reference": "Gril19"
+        },
+        {
+            "parameter": "Z_kpc",
+            "value": 7.6243317046083465,
+            "error": null,
+            "unit": "kpc",
+            "comments": null,
+            "reference": "Gril19"
+        },
+        {
+            "parameter": "bp_rp",
+            "value": 0.794189453125,
+            "error": null,
+            "unit": "mag",
+            "comments": null,
+            "reference": "Gril19"
+        },
+        {
+            "parameter": "d_orb_kpc",
+            "value": 7.714153122578156,
+            "error": null,
+            "unit": "kpc",
+            "comments": null,
+            "reference": "Gril19"
+        }
+    ],
     "Names": [
         {
             "other_name": "3938169278796286848"
         },
         {
             "other_name": "Gaia DR3 3938169278796286848"
+        }
+    ],
+    "Parallaxes": [
+        {
+            "parallax_mas": 0.6406536794726451,
+            "parallax_error": 0.3879934251308441,
+            "adopted": true,
+            "comments": null,
+            "reference": "Gril19"
+        }
+    ],
+    "Photometry": [
+        {
+            "band": "Gaia/Gaia3.G",
+            "magnitude": 19.77414321899414,
+            "magnitude_error": null,
+            "telescope": "Gaia",
+            "adopted": true,
+            "comments": null,
+            "reference": "Gril19",
+            "regime": "optical"
+        }
+    ],
+    "ProperMotions": [
+        {
+            "pm_ra": 1.8833609447475945,
+            "pm_ra_error": 0.5037341117858887,
+            "pm_dec": -7.3282166771369,
+            "pm_dec_error": 0.6405053734779358,
+            "pmra_pmdec_corr": -0.49015188217163086,
+            "adopted": true,
+            "comments": null,
+            "reference": "Gril19"
         }
     ]
 }

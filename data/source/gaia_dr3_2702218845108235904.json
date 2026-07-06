@@ -11,12 +11,96 @@
             "comments": null
         }
     ],
+    "Associations": [
+        {
+            "association": "M2",
+            "membership_probability": 0.12,
+            "adopted": true,
+            "comments": null,
+            "reference": "Gril22"
+        }
+    ],
+    "ModeledParameters": [
+        {
+            "parameter": "X_kpc",
+            "value": -3.6750044623251688,
+            "error": null,
+            "unit": "kpc",
+            "comments": null,
+            "reference": "Gril22"
+        },
+        {
+            "parameter": "Y_kpc",
+            "value": 10.627238597564565,
+            "error": null,
+            "unit": "kpc",
+            "comments": null,
+            "reference": "Gril22"
+        },
+        {
+            "parameter": "Z_kpc",
+            "value": -12.073680204881226,
+            "error": null,
+            "unit": "kpc",
+            "comments": null,
+            "reference": "Gril22"
+        },
+        {
+            "parameter": "bp_rp",
+            "value": 0.7243366241455078,
+            "error": null,
+            "unit": "mag",
+            "comments": null,
+            "reference": "Gril22"
+        },
+        {
+            "parameter": "d_orb_kpc",
+            "value": 16.744383239827304,
+            "error": null,
+            "unit": "kpc",
+            "comments": null,
+            "reference": "Gril22"
+        }
+    ],
     "Names": [
         {
             "other_name": "2702218845108235904"
         },
         {
             "other_name": "Gaia DR3 2702218845108235904"
+        }
+    ],
+    "Parallaxes": [
+        {
+            "parallax_mas": -0.5176515957426124,
+            "parallax_error": 0.4566519260406494,
+            "adopted": true,
+            "comments": null,
+            "reference": "Gril22"
+        }
+    ],
+    "Photometry": [
+        {
+            "band": "Gaia/Gaia3.G",
+            "magnitude": 19.612445831298828,
+            "magnitude_error": null,
+            "telescope": "Gaia",
+            "adopted": true,
+            "comments": null,
+            "reference": "Gril22",
+            "regime": "optical"
+        }
+    ],
+    "ProperMotions": [
+        {
+            "pm_ra": 2.293731930253978,
+            "pm_ra_error": 0.4639654755592346,
+            "pm_dec": -1.8629343402187755,
+            "pm_dec_error": 0.5554844737052917,
+            "pmra_pmdec_corr": 0.26448553800582886,
+            "adopted": true,
+            "comments": null,
+            "reference": "Gril22"
         }
     ]
 }

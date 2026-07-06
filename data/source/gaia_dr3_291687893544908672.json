@@ -11,12 +11,113 @@
             "comments": null
         }
     ],
+    "Associations": [
+        {
+            "association": "NGC 5824",
+            "membership_probability": null,
+            "adopted": true,
+            "comments": null,
+            "reference": "Yang22"
+        }
+    ],
+    "ModeledParameters": [
+        {
+            "parameter": "FeH",
+            "value": -2.383,
+            "error": null,
+            "unit": "dex",
+            "comments": null,
+            "reference": "Yang22"
+        },
+        {
+            "parameter": "X_kpc",
+            "value": -21.981630811561114,
+            "error": null,
+            "unit": "kpc",
+            "comments": null,
+            "reference": "Yang22"
+        },
+        {
+            "parameter": "Y_kpc",
+            "value": 13.377710983364633,
+            "error": null,
+            "unit": "kpc",
+            "comments": null,
+            "reference": "Yang22"
+        },
+        {
+            "parameter": "Z_kpc",
+            "value": -14.841203015361126,
+            "error": null,
+            "unit": "kpc",
+            "comments": null,
+            "reference": "Yang22"
+        },
+        {
+            "parameter": "bp_rp",
+            "value": 1.0906200408935547,
+            "error": null,
+            "unit": "mag",
+            "comments": null,
+            "reference": "Yang22"
+        },
+        {
+            "parameter": "d_orb_kpc",
+            "value": 24.24282841605008,
+            "error": null,
+            "unit": "kpc",
+            "comments": null,
+            "reference": "Yang22"
+        }
+    ],
     "Names": [
         {
             "other_name": "291687893544908672"
         },
         {
             "other_name": "Gaia DR3 291687893544908672"
+        }
+    ],
+    "Parallaxes": [
+        {
+            "parallax_mas": 0.21751231841542448,
+            "parallax_error": 0.19789251685142517,
+            "adopted": true,
+            "comments": null,
+            "reference": "Yang22"
+        }
+    ],
+    "Photometry": [
+        {
+            "band": "Gaia/Gaia3.G",
+            "magnitude": 18.512725830078125,
+            "magnitude_error": null,
+            "telescope": "Gaia",
+            "adopted": true,
+            "comments": null,
+            "reference": "Yang22",
+            "regime": "optical"
+        }
+    ],
+    "ProperMotions": [
+        {
+            "pm_ra": 1.0402944177148177,
+            "pm_ra_error": 0.22476309537887573,
+            "pm_dec": 0.22675607055759578,
+            "pm_dec_error": 0.18426023423671722,
+            "pmra_pmdec_corr": 0.4187760055065155,
+            "adopted": true,
+            "comments": null,
+            "reference": "Yang22"
+        }
+    ],
+    "RadialVelocities": [
+        {
+            "rv_kms": -36.43,
+            "rv_error": 5.51,
+            "adopted": true,
+            "comments": null,
+            "reference": "Yang22"
         }
     ]
 }

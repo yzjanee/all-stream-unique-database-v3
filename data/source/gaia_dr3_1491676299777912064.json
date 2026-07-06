@@ -11,12 +11,121 @@
             "comments": null
         }
     ],
+    "Associations": [
+        {
+            "association": "Spectre",
+            "membership_probability": null,
+            "adopted": true,
+            "comments": null,
+            "reference": "Chan22"
+        }
+    ],
+    "ModeledParameters": [
+        {
+            "parameter": "FeH",
+            "value": -1.51,
+            "error": null,
+            "unit": "dex",
+            "comments": null,
+            "reference": "Chan22"
+        },
+        {
+            "parameter": "X_kpc",
+            "value": -6.919005911621159,
+            "error": null,
+            "unit": "kpc",
+            "comments": null,
+            "reference": "Chan22"
+        },
+        {
+            "parameter": "Y_kpc",
+            "value": 5.850573568598817,
+            "error": null,
+            "unit": "kpc",
+            "comments": null,
+            "reference": "Chan22"
+        },
+        {
+            "parameter": "Z_kpc",
+            "value": 12.843515177665957,
+            "error": null,
+            "unit": "kpc",
+            "comments": null,
+            "reference": "Chan22"
+        },
+        {
+            "parameter": "aFe",
+            "value": 0.0,
+            "error": null,
+            "unit": "dex",
+            "comments": null,
+            "reference": "Chan22"
+        },
+        {
+            "parameter": "bp_rp",
+            "value": 0.9992446899414062,
+            "error": null,
+            "unit": "mag",
+            "comments": null,
+            "reference": "Chan22"
+        },
+        {
+            "parameter": "d_orb_kpc",
+            "value": 14.159445069715193,
+            "error": null,
+            "unit": "kpc",
+            "comments": null,
+            "reference": "Chan22"
+        }
+    ],
     "Names": [
         {
             "other_name": "1491676299777912064"
         },
         {
             "other_name": "Gaia DR3 1491676299777912064"
+        }
+    ],
+    "Parallaxes": [
+        {
+            "parallax_mas": 0.0662204929119443,
+            "parallax_error": 0.03781789168715477,
+            "adopted": true,
+            "comments": null,
+            "reference": "Chan22"
+        }
+    ],
+    "Photometry": [
+        {
+            "band": "Gaia/Gaia3.G",
+            "magnitude": 16.307424545288086,
+            "magnitude_error": null,
+            "telescope": "Gaia",
+            "adopted": true,
+            "comments": null,
+            "reference": "Chan22",
+            "regime": "optical"
+        }
+    ],
+    "ProperMotions": [
+        {
+            "pm_ra": -5.685210872005564,
+            "pm_ra_error": 0.03056076169013977,
+            "pm_dec": -5.015741592693671,
+            "pm_dec_error": 0.043728116899728775,
+            "pmra_pmdec_corr": 0.17076170444488525,
+            "adopted": true,
+            "comments": null,
+            "reference": "Chan22"
+        }
+    ],
+    "RadialVelocities": [
+        {
+            "rv_kms": -139.4,
+            "rv_error": 0.2,
+            "adopted": true,
+            "comments": null,
+            "reference": "Chan22"
         }
     ]
 }

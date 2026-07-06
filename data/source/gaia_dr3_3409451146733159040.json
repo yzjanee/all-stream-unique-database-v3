@@ -11,12 +11,121 @@
             "comments": null
         }
     ],
+    "Associations": [
+        {
+            "association": "Sagittarius",
+            "membership_probability": null,
+            "adopted": true,
+            "comments": null,
+            "reference": "Vasi21"
+        }
+    ],
+    "ModeledParameters": [
+        {
+            "parameter": "FeH",
+            "value": -0.25,
+            "error": null,
+            "unit": "dex",
+            "comments": null,
+            "reference": "Vasi21"
+        },
+        {
+            "parameter": "X_kpc",
+            "value": -47.564209878014395,
+            "error": null,
+            "unit": "kpc",
+            "comments": null,
+            "reference": "Vasi21"
+        },
+        {
+            "parameter": "Y_kpc",
+            "value": -0.422651665127006,
+            "error": null,
+            "unit": "kpc",
+            "comments": null,
+            "reference": "Vasi21"
+        },
+        {
+            "parameter": "Z_kpc",
+            "value": -12.538650568328178,
+            "error": null,
+            "unit": "kpc",
+            "comments": null,
+            "reference": "Vasi21"
+        },
+        {
+            "parameter": "bp_rp",
+            "value": 2.0816802978515625,
+            "error": null,
+            "unit": "mag",
+            "comments": null,
+            "reference": "Vasi21"
+        },
+        {
+            "parameter": "d_orb_kpc",
+            "value": 41.25,
+            "error": null,
+            "unit": "kpc",
+            "comments": null,
+            "reference": "Vasi21"
+        },
+        {
+            "parameter": "dist_kpc",
+            "value": 41.25,
+            "error": null,
+            "unit": "kpc",
+            "comments": null,
+            "reference": "Vasi21"
+        }
+    ],
     "Names": [
         {
             "other_name": "3409451146733159040"
         },
         {
             "other_name": "Gaia DR3 3409451146733159040"
+        }
+    ],
+    "Parallaxes": [
+        {
+            "parallax_mas": 0.0460875198059112,
+            "parallax_error": 0.062227170914411545,
+            "adopted": true,
+            "comments": null,
+            "reference": "Vasi21"
+        }
+    ],
+    "Photometry": [
+        {
+            "band": "Gaia/Gaia3.G",
+            "magnitude": 16.707561492919922,
+            "magnitude_error": null,
+            "telescope": "Gaia",
+            "adopted": true,
+            "comments": null,
+            "reference": "Vasi21",
+            "regime": "optical"
+        }
+    ],
+    "ProperMotions": [
+        {
+            "pm_ra": 0.22652940394828636,
+            "pm_ra_error": 0.08254177868366241,
+            "pm_dec": -1.476727937379738,
+            "pm_dec_error": 0.05745227262377739,
+            "pmra_pmdec_corr": -0.03412197157740593,
+            "adopted": true,
+            "comments": null,
+            "reference": "Vasi21"
+        }
+    ],
+    "RadialVelocities": [
+        {
+            "rv_kms": -163.2,
+            "rv_error": 17.55,
+            "adopted": true,
+            "comments": null,
+            "reference": "Vasi21"
         }
     ]
 }

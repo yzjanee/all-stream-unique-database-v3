@@ -11,12 +11,105 @@
             "comments": null
         }
     ],
+    "Associations": [
+        {
+            "association": "M3",
+            "membership_probability": null,
+            "adopted": true,
+            "comments": "ref2: Yang23",
+            "reference": "Ibat24"
+        }
+    ],
+    "ModeledParameters": [
+        {
+            "parameter": "X_kpc",
+            "value": -4.652260916868916,
+            "error": null,
+            "unit": "kpc",
+            "comments": "ref2: Yang23",
+            "reference": "Ibat24"
+        },
+        {
+            "parameter": "Y_kpc",
+            "value": 3.5480331431934067,
+            "error": null,
+            "unit": "kpc",
+            "comments": "ref2: Yang23",
+            "reference": "Ibat24"
+        },
+        {
+            "parameter": "Z_kpc",
+            "value": 6.4617440899411,
+            "error": null,
+            "unit": "kpc",
+            "comments": "ref2: Yang23",
+            "reference": "Ibat24"
+        },
+        {
+            "parameter": "bp_rp",
+            "value": 0.7335166931152344,
+            "error": null,
+            "unit": "mag",
+            "comments": "ref2: Yang23",
+            "reference": "Ibat24"
+        },
+        {
+            "parameter": "d_orb_kpc",
+            "value": 8.197459912247648,
+            "error": null,
+            "unit": "kpc",
+            "comments": "ref2: Yang23",
+            "reference": "Ibat24"
+        }
+    ],
     "Names": [
         {
             "other_name": "1224502013678132736"
         },
         {
             "other_name": "Gaia DR3 1224502013678132736"
+        }
+    ],
+    "Parallaxes": [
+        {
+            "parallax_mas": 0.046778796598917025,
+            "parallax_error": 0.07172515243291855,
+            "adopted": true,
+            "comments": "ref2: Yang23",
+            "reference": "Ibat24"
+        }
+    ],
+    "Photometry": [
+        {
+            "band": "Gaia/Gaia3.G",
+            "magnitude": 17.41539192199707,
+            "magnitude_error": null,
+            "telescope": "Gaia",
+            "adopted": true,
+            "comments": "ref2: Yang23",
+            "reference": "Ibat24",
+            "regime": "optical"
+        }
+    ],
+    "ProperMotions": [
+        {
+            "pm_ra": 1.8495243046677379,
+            "pm_ra_error": 0.0510939359664917,
+            "pm_dec": -5.596812956319427,
+            "pm_dec_error": 0.07408204674720764,
+            "pmra_pmdec_corr": 0.38081881403923035,
+            "adopted": true,
+            "comments": "ref2: Yang23",
+            "reference": "Ibat24"
+        }
+    ],
+    "RadialVelocities": [
+        {
+            "rv_kms": -182.08,
+            "rv_error": 16.89,
+            "adopted": true,
+            "comments": "ref2: Yang23",
+            "reference": "Ibat24"
         }
     ]
 }

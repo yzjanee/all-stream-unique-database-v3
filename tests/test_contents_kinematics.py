@@ -8,8 +8,8 @@ from sqlalchemy import func
 
 def test_parallaxes(db):
     n = db.query(db.Parallaxes.c.parallax_mas).count()
-    # Expected: ~80,130 (80,135 unique sources minus 5 with NaN parallax)
-    assert n == 0, f"Found {n} parallaxes (expected 0 before ingestion)"
+    # 80,130 = 80,135 unique sources minus 5 with NaN parallax
+    assert n == 80130, f"Found {n} parallaxes (expected 80130)"
 
     # Every source with a parallax should have exactly one adopted = True
     t = (
@@ -26,8 +26,8 @@ def test_parallaxes(db):
 
 def test_proper_motions(db):
     n = db.query(db.ProperMotions.c.pm_ra).count()
-    # Expected: ~80,130 (same 5 NaN rows excluded)
-    assert n == 0, f"Found {n} proper motion rows (expected 0 before ingestion)"
+    # 80,130 = same 5 NaN sources excluded
+    assert n == 80130, f"Found {n} proper motion rows (expected 80130)"
 
     # Every source with a ProperMotion should have exactly one adopted = True
     t = (
@@ -44,8 +44,8 @@ def test_proper_motions(db):
 
 def test_radial_velocities(db):
     n = db.query(db.RadialVelocities.c.rv_kms).count()
-    # Expected: ~6,942 (only stars with non-NaN Vr)
-    assert n == 0, f"Found {n} radial velocity rows (expected 0 before ingestion)"
+    # 6,942 sources with non-NaN Vr (73,193 excluded)
+    assert n == 6942, f"Found {n} radial velocity rows (expected 6942)"
 
     t = (
         db.query(

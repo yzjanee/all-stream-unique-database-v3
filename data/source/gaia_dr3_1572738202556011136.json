@@ -11,12 +11,105 @@
             "comments": null
         }
     ],
+    "Associations": [
+        {
+            "association": "GD-1",
+            "membership_probability": null,
+            "adopted": true,
+            "comments": null,
+            "reference": "Huan19"
+        }
+    ],
+    "ModeledParameters": [
+        {
+            "parameter": "X_kpc",
+            "value": -13.491223493305052,
+            "error": null,
+            "unit": "kpc",
+            "comments": null,
+            "reference": "Huan19"
+        },
+        {
+            "parameter": "Y_kpc",
+            "value": 5.482635121784773,
+            "error": null,
+            "unit": "kpc",
+            "comments": null,
+            "reference": "Huan19"
+        },
+        {
+            "parameter": "Z_kpc",
+            "value": 14.003769404360463,
+            "error": null,
+            "unit": "kpc",
+            "comments": null,
+            "reference": "Huan19"
+        },
+        {
+            "parameter": "bp_rp",
+            "value": 0.5997600555419922,
+            "error": null,
+            "unit": "mag",
+            "comments": null,
+            "reference": "Huan19"
+        },
+        {
+            "parameter": "d_orb_kpc",
+            "value": 15.899433370211433,
+            "error": null,
+            "unit": "kpc",
+            "comments": null,
+            "reference": "Huan19"
+        }
+    ],
     "Names": [
         {
             "other_name": "1572738202556011136"
         },
         {
             "other_name": "Gaia DR3 1572738202556011136"
+        }
+    ],
+    "Parallaxes": [
+        {
+            "parallax_mas": -0.13261933921803254,
+            "parallax_error": 0.13207508623600006,
+            "adopted": true,
+            "comments": null,
+            "reference": "Huan19"
+        }
+    ],
+    "Photometry": [
+        {
+            "band": "Gaia/Gaia3.G",
+            "magnitude": 18.45284652709961,
+            "magnitude_error": null,
+            "telescope": "Gaia",
+            "adopted": true,
+            "comments": null,
+            "reference": "Huan19",
+            "regime": "optical"
+        }
+    ],
+    "ProperMotions": [
+        {
+            "pm_ra": -9.266823470198023,
+            "pm_ra_error": 0.10602445155382156,
+            "pm_dec": -7.086576983350168,
+            "pm_dec_error": 0.11900657415390015,
+            "pmra_pmdec_corr": 0.1832728236913681,
+            "adopted": true,
+            "comments": null,
+            "reference": "Huan19"
+        }
+    ],
+    "RadialVelocities": [
+        {
+            "rv_kms": -196.5,
+            "rv_error": 5.04,
+            "adopted": true,
+            "comments": null,
+            "reference": "Huan19"
         }
     ]
 }

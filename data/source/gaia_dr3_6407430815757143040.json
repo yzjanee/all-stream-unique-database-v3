@@ -11,12 +11,113 @@
             "comments": null
         }
     ],
+    "Associations": [
+        {
+            "association": "Indus",
+            "membership_probability": 0.93,
+            "adopted": true,
+            "comments": "ref2: Ibat24",
+            "reference": "Ship19"
+        }
+    ],
+    "ModeledParameters": [
+        {
+            "parameter": "FeH",
+            "value": -2.0098298713971494,
+            "error": null,
+            "unit": "dex",
+            "comments": "ref2: Ibat24",
+            "reference": "Ship19"
+        },
+        {
+            "parameter": "X_kpc",
+            "value": -0.03965388679643844,
+            "error": null,
+            "unit": "kpc",
+            "comments": "ref2: Ibat24",
+            "reference": "Ship19"
+        },
+        {
+            "parameter": "Y_kpc",
+            "value": -4.99973094832353,
+            "error": null,
+            "unit": "kpc",
+            "comments": "ref2: Ibat24",
+            "reference": "Ship19"
+        },
+        {
+            "parameter": "Z_kpc",
+            "value": -11.421335542802156,
+            "error": null,
+            "unit": "kpc",
+            "comments": "ref2: Ibat24",
+            "reference": "Ship19"
+        },
+        {
+            "parameter": "bp_rp",
+            "value": 1.0694398880004883,
+            "error": null,
+            "unit": "mag",
+            "comments": "ref2: Ibat24",
+            "reference": "Ship19"
+        },
+        {
+            "parameter": "d_orb_kpc",
+            "value": 14.957950072551926,
+            "error": null,
+            "unit": "kpc",
+            "comments": "ref2: Ibat24",
+            "reference": "Ship19"
+        }
+    ],
     "Names": [
         {
             "other_name": "6407430815757143040"
         },
         {
             "other_name": "Gaia DR3 6407430815757143040"
+        }
+    ],
+    "Parallaxes": [
+        {
+            "parallax_mas": 0.07986187541079123,
+            "parallax_error": 0.033959198743104935,
+            "adopted": true,
+            "comments": "ref2: Ibat24",
+            "reference": "Ship19"
+        }
+    ],
+    "Photometry": [
+        {
+            "band": "Gaia/Gaia3.G",
+            "magnitude": 15.910752296447754,
+            "magnitude_error": null,
+            "telescope": "Gaia",
+            "adopted": true,
+            "comments": "ref2: Ibat24",
+            "reference": "Ship19",
+            "regime": "optical"
+        }
+    ],
+    "ProperMotions": [
+        {
+            "pm_ra": 3.293622427958142,
+            "pm_ra_error": 0.028736528009176254,
+            "pm_dec": -4.961370292274221,
+            "pm_dec_error": 0.032428935170173645,
+            "pmra_pmdec_corr": -0.42616769671440125,
+            "adopted": true,
+            "comments": "ref2: Ibat24",
+            "reference": "Ship19"
+        }
+    ],
+    "RadialVelocities": [
+        {
+            "rv_kms": -45.086999668572986,
+            "rv_error": 0.9956919263052111,
+            "adopted": true,
+            "comments": "ref2: Ibat24",
+            "reference": "Ship19"
         }
     ]
 }

@@ -8,9 +8,9 @@ from astropy import units as u
 
 def test_modeled_parameters(db):
     n = db.query(db.ModeledParameters.c.parameter).count()
-    # Expected after ingestion: ~458,000 rows across 8 parameters
-    # (bp_rp, d_orb_kpc, X_kpc, Y_kpc, Z_kpc, dist_kpc, FeH, aFe)
-    assert n == 0, f"Found {n} ModeledParameters rows (expected 0 before ingestion)"
+    # 458,088 rows across 8 parameters (bp_rp, d_orb_kpc, X_kpc, Y_kpc, Z_kpc,
+    # dist_kpc=55,397, FeH=1,967, aFe=49; rest have all 80,135 unique sources)
+    assert n == 458088, f"Found {n} ModeledParameters rows (expected 458088)"
 
     # All units must be astropy-resolvable
     t = (
@@ -35,5 +35,5 @@ def test_modeled_parameters(db):
 
 def test_associations(db):
     n = db.query(db.Associations.c.source).count()
-    # Expected after ingestion: 80,162 rows (includes both memberships for 27 duplicate stars)
-    assert n == 0, f"Found {n} Associations rows (expected 0 before ingestion)"
+    # 80,162 rows: all (source, stream) pairs including both memberships for 27 duplicate stars
+    assert n == 80162, f"Found {n} Associations rows (expected 80162)"
