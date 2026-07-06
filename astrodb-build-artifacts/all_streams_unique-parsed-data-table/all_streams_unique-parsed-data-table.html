@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Column Information: all_streams_unique.fits</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 1200px; margin: 40px auto; padding: 0 20px; color: #24292e; }
+  h1 { border-bottom: 1px solid #e1e4e8; padding-bottom: 8px; }
+  .meta { background: #f6f8fa; border: 1px solid #e1e4e8; border-radius: 6px; padding: 12px 16px; margin-bottom: 24px; font-family: monospace; font-size: 14px; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th { background: #f6f8fa; border: 1px solid #e1e4e8; padding: 8px 12px; text-align: left; }
+  td { border: 1px solid #e1e4e8; padding: 6px 12px; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nan-high { color: #cb2431; font-weight: bold; }
+  .nan-med { color: #e36209; }
+  .nan-ok { color: #22863a; }
+  code { background: #f3f4f6; padding: 1px 5px; border-radius: 3px; font-size: 13px; }
+  .notes { background: #fffbdd; border: 1px solid #f0de82; border-radius: 6px; padding: 12px 16px; margin-top: 24px; }
+</style>
+</head>
+<body>
+<h1>Column Information: all_streams_unique.fits</h1>
+<div class="meta">
+  <strong>File:</strong> all_streams_unique.fits<br>
+  <strong>Format:</strong> fits &nbsp;|&nbsp; <strong>Reader:</strong> astropy 7.2.0<br>
+  <strong>Rows:</strong> 80,162 &nbsp;|&nbsp; <strong>Columns:</strong> 40<br>
+  <strong>Unique streams:</strong> 92 &nbsp;|&nbsp; <strong>Unique first references:</strong> 15
+</div>
+
+<table>
+<tr>
+  <th>Column</th><th>Description</th><th>Units</th><th>Type</th><th>NaN count</th>
+</tr>
+<tr><td><code>source_id</code></td><td>Gaia DR3 unique source identifier</td><td>—</td><td>int64</td><td class="nan-ok">0</td></tr>
+<tr><td><code>dist</code></td><td>Heliocentric distance</td><td>kpc</td><td>float64</td><td class="nan-med">24,765</td></tr>
+<tr><td><code>dist_err</code></td><td>Uncertainty on heliocentric distance</td><td>kpc</td><td>float64</td><td class="nan-med">24,927</td></tr>
+<tr><td><code>Vr</code></td><td>Line-of-sight radial velocity</td><td>km/s</td><td>float64</td><td class="nan-high">73,214</td></tr>
+<tr><td><code>Vr_err</code></td><td>Uncertainty on radial velocity</td><td>km/s</td><td>float64</td><td class="nan-high">73,214</td></tr>
+<tr><td><code>FeH</code></td><td>Iron metallicity [Fe/H]</td><td>dex</td><td>float64</td><td class="nan-high">78,195</td></tr>
+<tr><td><code>FeH_err</code></td><td>Uncertainty on [Fe/H]</td><td>dex</td><td>float64</td><td class="nan-high">78,195</td></tr>
+<tr><td><code>aFe</code></td><td>Alpha-to-iron abundance ratio [α/Fe]</td><td>dex</td><td>float64</td><td class="nan-high">80,113</td></tr>
+<tr><td><code>aFe_err</code></td><td>Uncertainty on [α/Fe]</td><td>dex</td><td>float64</td><td class="nan-high">80,113</td></tr>
+<tr><td><code>p_mem</code></td><td>Stream membership probability</td><td>—</td><td>float64</td><td class="nan-high">79,913</td></tr>
+<tr><td><code>ra</code></td><td>Right ascension (ICRS, J2016.0)</td><td>deg</td><td>float64</td><td class="nan-ok">0</td></tr>
+<tr><td><code>ra_error</code></td><td>Uncertainty on right ascension</td><td>mas</td><td>float32</td><td class="nan-ok">0</td></tr>
+<tr><td><code>dec</code></td><td>Declination (ICRS, J2016.0)</td><td>deg</td><td>float64</td><td class="nan-ok">0</td></tr>
+<tr><td><code>dec_error</code></td><td>Uncertainty on declination</td><td>mas</td><td>float32</td><td class="nan-ok">0</td></tr>
+<tr><td><code>parallax</code></td><td>Parallax (ingest all including negative values)</td><td>mas</td><td>float64</td><td class="nan-ok">5</td></tr>
+<tr><td><code>parallax_error</code></td><td>Uncertainty on parallax</td><td>mas</td><td>float32</td><td class="nan-ok">5</td></tr>
+<tr><td><code>parallax_over_error</code></td><td>Parallax significance (parallax / parallax_error)</td><td>—</td><td>float32</td><td class="nan-ok">5</td></tr>
+<tr><td><code>pm</code></td><td>Total proper motion magnitude</td><td>mas/yr</td><td>float32</td><td class="nan-ok">5</td></tr>
+<tr><td><code>pmra</code></td><td>Proper motion in RA (includes cos δ factor)</td><td>mas/yr</td><td>float64</td><td class="nan-ok">5</td></tr>
+<tr><td><code>pmra_error</code></td><td>Uncertainty on pmra</td><td>mas/yr</td><td>float32</td><td class="nan-ok">5</td></tr>
+<tr><td><code>pmdec</code></td><td>Proper motion in declination</td><td>mas/yr</td><td>float64</td><td class="nan-ok">5</td></tr>
+<tr><td><code>pmdec_error</code></td><td>Uncertainty on pmdec</td><td>mas/yr</td><td>float32</td><td class="nan-ok">5</td></tr>
+<tr><td><code>ra_dec_corr</code></td><td>Correlation coefficient: ra × dec</td><td>—</td><td>float32</td><td class="nan-ok">0</td></tr>
+<tr><td><code>ra_parallax_corr</code></td><td>Correlation coefficient: ra × parallax</td><td>—</td><td>float32</td><td class="nan-ok">5</td></tr>
+<tr><td><code>ra_pmra_corr</code></td><td>Correlation coefficient: ra × pmra</td><td>—</td><td>float32</td><td class="nan-ok">5</td></tr>
+<tr><td><code>ra_pmdec_corr</code></td><td>Correlation coefficient: ra × pmdec</td><td>—</td><td>float32</td><td class="nan-ok">5</td></tr>
+<tr><td><code>dec_parallax_corr</code></td><td>Correlation coefficient: dec × parallax</td><td>—</td><td>float32</td><td class="nan-ok">5</td></tr>
+<tr><td><code>dec_pmra_corr</code></td><td>Correlation coefficient: dec × pmra</td><td>—</td><td>float32</td><td class="nan-ok">5</td></tr>
+<tr><td><code>dec_pmdec_corr</code></td><td>Correlation coefficient: dec × pmdec</td><td>—</td><td>float32</td><td class="nan-ok">5</td></tr>
+<tr><td><code>parallax_pmra_corr</code></td><td>Correlation coefficient: parallax × pmra</td><td>—</td><td>float32</td><td class="nan-ok">5</td></tr>
+<tr><td><code>parallax_pmdec_corr</code></td><td>Correlation coefficient: parallax × pmdec</td><td>—</td><td>float32</td><td class="nan-ok">5</td></tr>
+<tr><td><code>pmra_pmdec_corr</code></td><td>Correlation coefficient: pmra × pmdec</td><td>—</td><td>float32</td><td class="nan-ok">5</td></tr>
+<tr><td><code>phot_g_mean_mag</code></td><td>Gaia G-band mean magnitude</td><td>mag</td><td>float32</td><td class="nan-ok">0</td></tr>
+<tr><td><code>bp_rp</code></td><td>Gaia BP minus RP color index</td><td>mag</td><td>float32</td><td class="nan-ok">0</td></tr>
+<tr><td><code>name</code></td><td>Stellar stream name</td><td>—</td><td>str</td><td class="nan-ok">0</td></tr>
+<tr><td><code>reference</code></td><td>Discovery/membership reference(s); comma-separated for multi-ref rows</td><td>—</td><td>str</td><td class="nan-ok">0</td></tr>
+<tr><td><code>d_orb</code></td><td>Orbital distance from Galactic center</td><td>kpc</td><td>float64</td><td class="nan-ok">0</td></tr>
+<tr><td><code>X</code></td><td>Galactocentric X coordinate</td><td>kpc</td><td>float64</td><td class="nan-ok">0</td></tr>
+<tr><td><code>Y</code></td><td>Galactocentric Y coordinate</td><td>kpc</td><td>float64</td><td class="nan-ok">0</td></tr>
+<tr><td><code>Z</code></td><td>Galactocentric Z coordinate</td><td>kpc</td><td>float64</td><td class="nan-ok">0</td></tr>
+</table>
+
+<div class="notes">
+<strong>Notes:</strong>
+<ul>
+  <li>No embedded FITS descriptions — all descriptions inferred from column names and Gaia DR3 data model.</li>
+  <li><code>[-]</code> unit in FITS header (FeH, FeH_err) is non-standard; treated as dimensionless (dex).</li>
+  <li><code>p_mem</code> has only <strong>249 non-NaN rows</strong> out of 80,162 — membership probability present only for a small subset of streams.</li>
+  <li>5 rows have NaN parallax/pm (same 5 stars) — ingest as-is (do not filter bad parallaxes per meeting decision).</li>
+  <li>484 rows have comma-separated references; first value used as FK, second stored in <code>comments</code>.</li>
+  <li>Gaia DR3 coordinates are at epoch <strong>J2016.0</strong> → set <code>epoch_year = 2016.0</code> in Sources.</li>
+</ul>
+</div>
+</body>
+</html>

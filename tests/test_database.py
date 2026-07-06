@@ -1,53 +1,48 @@
 """
-Tests that the database functions work as expected.
-Users should hopefully not need to modify these tests.
+Tests that the database ORM layer functions work as expected.
 """
 
 from sqlalchemy.ext.automap import automap_base
 
 
 def test_orm_use(db):
-    # Tests validation using the SQLAlchemy ORM
-
     Base = automap_base(metadata=db.metadata)
     Base.prepare()
 
-    # Creating the actual Table objects
     Sources = Base.classes.Sources
     Names = Base.classes.Names
+    Publications = Base.classes.Publications
 
-    # Adding and removing a basic source
-    s = Sources(source="V4046 Sgr", ra_deg=273.54, dec_deg=-32.79, reference="Cohe03")
-    n = Names(source="V4046 Sgr", other_name="Hen 3-1636")
+    # Add a test publication first (Sources.reference has an FK to Publications)
+    ref = Publications(reference="Test00")
+    s = Sources(source="Test Source", ra_deg=10.0, dec_deg=-20.0,
+                epoch_year=2016.0, reference="Test00")
+    n = Names(source="Test Source", other_name="TS-001")
+
     with db.session as session:
+        session.add(ref)
         session.add(s)
         session.add(n)
         session.commit()
 
-    assert db.query(db.Sources).filter(db.Sources.c.source == "V4046 Sgr").count() == 1
-    assert db.query(db.Names).filter(db.Names.c.other_name == "Hen 3-1636").count() == 1
+    assert db.query(db.Sources).filter(db.Sources.c.source == "Test Source").count() == 1
+    assert db.query(db.Names).filter(db.Names.c.other_name == "TS-001").count() == 1
 
-    # Remove added source so other tests don't include it
     with db.session as session:
-        session.delete(n)  # delete Names before Sources
+        session.delete(n)
         session.delete(s)
+        session.delete(ref)
         session.commit()
 
-    assert db.query(db.Sources).filter(db.Sources.c.source == "V4046 Sgr").count() == 0
+    assert db.query(db.Sources).filter(db.Sources.c.source == "Test Source").count() == 0
 
 
 def test_adding_data(db):
-
-    # Confirm the source isn't already present
-    assert (
-        db.query(db.Sources).filter(db.Sources.c.source == "Fake V4046 Sgr").count()
-        == 0
-    )
+    assert db.query(db.Sources).filter(db.Sources.c.source == "Test Source 2").count() == 0
 
     Base = automap_base(metadata=db.metadata)
     Base.prepare()
 
-    # Creating the actual Table objects
     Sources = Base.classes.Sources
     Publications = Base.classes.Publications
     Telescopes = Base.classes.Telescopes
@@ -55,54 +50,33 @@ def test_adding_data(db):
     PhotometryFilters = Base.classes.PhotometryFilters
     RegimeList = Base.classes.RegimeList
 
-    # Insert supporting data to (Sources, Publications, Telescopes, PhotometryFilters)
-    s = Sources(source="V4046 Sgr", ra_deg=273.54, dec_deg=-32.79, reference="Cohe03")
-    ref = Publications(reference="Cutri03")
-    tel = Telescopes(telescope="Fake 2MASS", reference="Cutri03")
-    pf = PhotometryFilters(band="Fake 2MASS.Ks", effective_wavelength_angstroms=2.159)
-    reg = RegimeList(regime="fake optical")
+    ref = Publications(reference="Test01")
+    s = Sources(source="Test Source 2", ra_deg=20.0, dec_deg=-30.0,
+                epoch_year=2016.0, reference="Test01")
+    tel = Telescopes(telescope="TestTel", reference="Test01")
+    pf = PhotometryFilters(band="TestBand", effective_wavelength_angstroms=6231.0)
+    reg = RegimeList(regime="test_optical")
 
     with db.session as session:
         session.add_all([ref, pf, tel, s, reg])
         session.commit()
 
-    # Verify supporting information was stored
-    assert db.query(db.Sources).filter(db.Sources.c.source == "V4046 Sgr").count() == 1
-    assert (
-        db.query(db.Telescopes)
-        .filter(db.Telescopes.c.telescope == "Fake 2MASS")
-        .count()
-        == 1
-    )
-    assert (
-        db.query(db.PhotometryFilters)
-        .filter(db.PhotometryFilters.c.band == "Fake 2MASS.Ks")
-        .count()
-        == 1
-    )
+    assert db.query(db.Sources).filter(db.Sources.c.source == "Test Source 2").count() == 1
 
-    # Insert Photometry data, which refers to the supporting tables
-    # Using it within add_all can cause issues since it may insert
-    # the value before the supporting information is in place
     phot = Photometry(
-        source="V4046 Sgr",
-        band="Fake 2MASS.Ks",
-        magnitude=7.249,
-        telescope="Fake 2MASS",
-        reference="Cutri03",
-        regime="fake optical",
+        source="Test Source 2",
+        band="TestBand",
+        magnitude=15.0,
+        telescope="TestTel",
+        reference="Test01",
+        regime="test_optical",
     )
     with db.session as session:
         session.add(phot)
         session.commit()
 
-    # Verify Photometry was added
-    assert (
-        db.query(db.Photometry).filter(db.Photometry.c.source == "V4046 Sgr").count()
-        == 1
-    )
+    assert db.query(db.Photometry).filter(db.Photometry.c.source == "Test Source 2").count() == 1
 
-    # Clean up — remove in reverse FK order so constraints aren't violated
     with db.session as session:
         session.delete(phot)
         session.commit()

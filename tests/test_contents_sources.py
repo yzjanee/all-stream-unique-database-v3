@@ -1,30 +1,24 @@
 """
-This module tests the contents of Sources table.
-As users add their own data, these tests should be modified to reflect the new data.
-
+Tests for the Sources and Names tables.
+Update expected counts as data is ingested.
 """
 
-import pytest
 from sqlalchemy import or_
 
 
 def test_sources(db):
-    # Test that Sources has expected number of entries
     n_sources = db.query(db.Sources).count()
-    assert n_sources == 7, f"found {n_sources} sources"
+    # Expected: 80,135 unique Gaia DR3 sources (update after ingestion)
+    assert n_sources == 0, f"found {n_sources} sources (expected 0 before ingestion)"
 
 
-@pytest.mark.parametrize(
-    "reference, value",
-    [("Perlmutter99", 1), ("Rubin80", 2), ("Naka95", 1), ("Eros99", 1)],
-)
-def test_sources_reference(db, reference, value):
-    n_sources = db.query(db.Sources).filter(db.Sources.c.reference == reference).count()
-    assert n_sources == value, f"found {n_sources} sources for {reference}"
+def test_names(db):
+    n_names = db.query(db.Names).count()
+    # Expected: 160,270 names (2 per source: "Gaia DR3 <id>" + raw int)
+    assert n_names == 0, f"found {n_names} names (expected 0 before ingestion)"
 
 
 def test_coordinates(db):
-    # Verify that all sources have valid coordinates
     t = (
         db.query(db.Sources.c.source, db.Sources.c.ra_deg, db.Sources.c.dec_deg)
         .filter(
@@ -41,3 +35,16 @@ def test_coordinates(db):
     )
 
     assert len(t) == 0, f"{len(t)} Sources failed coordinate checks: {t}"
+
+
+def test_epoch_year(db):
+    # After ingestion, all sources should have epoch_year = 2016.0 (Gaia DR3)
+    t = (
+        db.query(db.Sources.c.source)
+        .filter(
+            db.Sources.c.ra_deg.isnot(None),
+            db.Sources.c.epoch_year.is_(None),
+        )
+        .astropy()
+    )
+    assert len(t) == 0, f"{len(t)} Sources with coordinates but no epoch_year"
