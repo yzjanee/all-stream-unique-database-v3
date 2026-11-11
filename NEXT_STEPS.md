@@ -25,6 +25,36 @@
 
 - Write down how accurate the proper motions are and why we added the `pmra_pmdec_corr` field.
 
+## July 6th Meeting Notes
+
+Changes to make in the [astrodb_bot](https://github.com/astrodbtoolkit/astrodb-bot) skills before building version 4. Status is as of November 2026.
+
+### Stop and ask the user more
+
+- Parse-table and schema-match should stop so the scientist can check the results before moving on. **Done**
+- Skills should not assume decisions in `directions.md`. Review `directions.md` with the user before starting. **Partly done:** schema-match follows `directions.md`, but no skill asks the user to review it first.
+- Before making the website, check that the schema match was reviewed. **Not done**
+- Figure out the skill order, and which skill creates `schema.yaml` first. **Done:** skills are numbered, and schema-generate (build-05) creates `schema.yaml`.
+
+### Outputs and reports
+
+- Put all outputs in `astrodb-build-artifacts/` instead of making many folders. **Done**
+- Make one report for all tables. Separate reports are too hard to review. **Not done**
+- End each skill with a checklist, gotchas, and what to do next. **Done**
+
+### workflow.md (the plan document)
+
+- Always create `workflow.md`. Every skill adds to it and explains why it made each decision (for example, why it converted a file to another format). **Done**
+- Keep the shared directions in one markdown file under `skills/`, linked into each skill's `references/` folder. **Done:** the file is `astrodb-instructions.md`.
+
+### README
+
+- Explain where schema-generate fits: it runs after schema-match, reads the column-to-table mapping, writes `schema.yaml`, then runs `felis validate`. **Done**
+
+### Personal
+
+- Write my own workflow notes.
+
 ## Where to find more
 
 - Build log with exact prompts: [`astrodb-build-artifacts/workflow.md`](astrodb-build-artifacts/workflow.md)
